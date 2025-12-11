@@ -2,7 +2,7 @@
 use unity::{prelude::*};
 use unity::system::List;
 use engage::gamedata::unit::Unit;
-use engage::gamedata::Hub::*;
+use engage::hub::*;
 
 #[unity::class("App", "HubLocatorGroup.CreateCharacter")]
 pub struct CreateCharacter {
@@ -19,7 +19,7 @@ pub struct CreateCharacter {
 
 #[unity::class("App", "HubLocatorGroup.CreateCharacter")]
 //#[skyline::hook(offset=0x028ae890)]
-pub fn hubunit_makespawn(this: &mut CreateCharacter, pid: &Il2CppString, locator: &mut HubLocatorGroup, access: &HubAccessData, callback: u64, method_info: OptionalMethod) {
+pub fn hubunit_makespawn(this: &mut CreateCharacter, pid: &Il2CppString, locator: &Il2CppArray, access: &HubAccessData, callback: u64, method_info: OptionalMethod) {
     call_original!(this, pid, locator, access, callback, method_info);
     println!("plugin did not crash, good job on the bare minimum lmao")
 }
