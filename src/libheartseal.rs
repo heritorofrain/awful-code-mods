@@ -34,7 +34,6 @@ pub fn compare_sid_jid(this: &mut ChangeJobData, unit: &Unit, method_info: Optio
         return as_normal;
     }
     else {
-        println!("SID not found: {}", format!("SID_{}", this.job.jid.get_string().unwrap()));
         this.is_gender = false;
         return false;
 }
